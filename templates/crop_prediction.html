@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesf.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+        .result-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result-container img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Crop Prediction Form -->
+    <div class="form-container">
+        <h1>Crop Prediction</h1>
+        <form action="{{ url_for('crop_prediction') }}" method="post">
+            <label for="soil_type">SOIL_TYPE:</label>
+            <select id="soil_type" name="soil_type" required>
+                <option value="">Select Soil Type</option>
+                <option value="Alluvial soil">Alluvial soil</option>
+                <option value="Mountain soil">Mountain soil</option>
+                <option value="Red soil">Red soil</option>
+                <option value="Laterite soil">Laterite soil</option>
+                <option value="Desert soil">Desert soil</option>
+                <option value="Loamy soil">Loamy soil</option>
+                <option value="Inceptisols">Inceptisols</option>
+                <option value="Regur soil">Regur soil</option>
+                <option value="Black soil">Black soil</option>
+            </select>
+            <label for="N_SOIL">N_SOIL:</label>
+            <input type="number" step="any" id="N_SOIL" name="N_SOIL" required>
+            <label for="P_SOIL">P_SOIL:</label>
+            <input type="number" step="any" id="P_SOIL" name="P_SOIL" required>
+            <label for="K_SOIL">K_SOIL:</label>
+            <input type="number" step="any" id="K_SOIL" name="K_SOIL" required>
+            <label for="TEMPERATURE">TEMPERATURE:</label>
+            <input type="number" id="TEMPERATURE" name="TEMPERATURE" required>
+            <label for="HUMIDITY">HUMIDITY:</label>
+            <input type="number" id="HUMIDITY" name="HUMIDITY" required>
+            <label for="pH">pH:</label>
+            <input type="number" step="any" id="pH" name="pH" required>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result-container">
+            {% if result %}
+                <h2>Recommended Crop: {{ result }}</h2>
+                {% if result == 'Rice' %}
+                    <img src="{{ url_for('static', filename='images/rice.jpg') }}" alt="Rice">
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesf.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Collapsible Sidebar -->
+        <div class="sidebar">
+            <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+            <div class="menu-content">
+                <a href="{{ url_for('farm') }}">Buy</a> <!-- Farm arunn Buy aki -->
+                <a href="{{ url_for('crop_prediction') }}">Orders</a>
+            </div>
+            <!-- Logout Button -->
+            <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Welcome to Customer Dashboard</h1>
+            <p>This is your control panel where you can manage your activities, predict crops, and monitor growth.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesf.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Irrigation System Form -->
+    <div class="form-container">
+        <h1>Irrigation System</h1>
+        <form id="irrigation-form">
+            <label for="moisture">Soil Moisture (%):</label>
+            <input type="number" id="moisture" name="moisture" step="any" required>
+            <button type="button" onclick="checkMoisture()">Check Moisture</button>
+        </form>
+    </div>
+
+    <script>
+        function checkMoisture() {
+            var moisture = document.getElementById('moisture').value;
+            if (moisture < 25) {
+                alert('Smart irrigation system started');
+            } else {
+                alert('Soil moisture is sufficient');
+            }
+        }
+    </script>
+</body>
+</html>

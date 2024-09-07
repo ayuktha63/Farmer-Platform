@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>Please choose one of the options below:</p>
+        <div class="button-container">
+            <a href="{{ url_for('farmer_login') }}" class="btn">Farmer</a>
+            <a href="{{ url_for('customer_login') }}" class="btn">Customer</a>
+            <a href="{{ url_for('retailer_login') }}" class="btn">Retailer</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Headings and text */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+
+p {
+    color: rgb(0, 0, 0);
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #809238;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #6d8321;
+    transform: scale(1.05);
+}
+
+/* Error message */
+#error-message {
+    color: red;
+}
+
+/* Container for text and buttons */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+/* Button container */
+.button-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 200px;
+    margin: 10px 0; /* Add margin between buttons */
+    padding: 1rem;
+    background-color: #809238;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6d8321;
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .btn {
+        width: 150px;
+    }
+}
+
