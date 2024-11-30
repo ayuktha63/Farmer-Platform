@@ -56,14 +56,10 @@ This project was a collaborative effort by:
 ## Installation and Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-url/farmeraid.git
-   cd farmeraid
+   git clone https://github.com/ayuktha63/Farmer-Platform.git
+   cd Farmer-Platform
    ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the application:
+2. Run the application:
    ```bash
    python app.py
    ```
